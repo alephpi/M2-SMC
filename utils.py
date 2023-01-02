@@ -111,13 +111,3 @@ def resample(samples, weights):
 		else:
 			j += 1
 	return np.asarray(new_samples)
-
-def plot_trace(t, start=0, end=-1):
-	init_pos = t['init_pos'].numpy()
-	target_pos = t['target_pos'].numpy()
-	true_pos = t['true_pos'].numpy()
-	plt.figure()
-	plt.scatter(*init_pos, label='init_pos')
-	plt.scatter(*target_pos, label='target_pos')
-	plt.plot(true_pos[start:end,0], true_pos[start:end,1], label='true_pos')
-	plt.legend()
